@@ -13,8 +13,37 @@
     <button>Cancelar</button>-->
 
     <script>
-        var num;
-        var 
+        var entrada = 111;
+        var aleatorio = Math.round(Math.random()*100);
+        var intentos = 0;
+        var salir = false;
+        alert(aleatorio);
+
+        while(intentos <= 10 && entrada != aleatorio && !salir)
+        {
+            entrada = prompt("Vuelve a omki0om,o'0i, el número"); 
+
+            if(entrada == null)
+            {
+                salir = true;
+            }
+            intentos++;
+        }
+        if(entrada == aleatorio)
+        {
+            document.write("Felicidades, has acertado el núemero.");
+            
+        }else{
+
+            if(salir)
+            {
+                document.write("Has pulsado cancelar");
+            }
+            else
+            {
+                document.write("No has acertado el número.");
+            }
+        }
     </script>
 </body>
 </html>
