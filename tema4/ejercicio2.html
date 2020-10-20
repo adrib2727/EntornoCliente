@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var texto = "Hola soy yo";
+        document.writeln(texto.replace("yo", "tu"));
+        texto = prompt("Di algo");
+        document.writeln('-',texto,'-');
+        document.writeln('-',texto.trim(),'-');
+
+        document.writeln(texto.slice(3,10));
+        document.writeln("<br>");
+        document.writeln(texto.slice(3,-3));
+        document.writeln("<br>");
+        document.writeln(texto.substring(3, 10));
+        document.writeln("<br>")
+        document.writeln(texto.substr(2, 2));
+        document.writeln("<br>");
+        document.writeln(texto.split(" ",1));
+        console.log(texto.split(" ", 1));
+
+    </script>
+</body>
+</html>
