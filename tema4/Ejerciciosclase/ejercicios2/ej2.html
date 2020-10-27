@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        /*Crear un vector de 5 elementos de cadenas de caracteres, inicializa el vector con datos leídos
+        por el teclado. Copia los elementos del vector en otro vector pero en orden inverso, y
+        muéstralo por la pantalla.*/ /*HACERLO CON EL PROMPT*/
+
+        const cadena1 = []; //Creación del primer Array.
+        const cadena2 = []; //Creación del segundo Array.
+        let entrada;
+
+        let i = cadena1.length;
+        let x = 0;
+
+        for(let ele = 0; ele < 5; ele++){ //Bucle que pide 5 nombres con el PROMPT.
+            entrada = prompt("Introduce nombres");
+            cadena1.push(entrada); 
+        }
+
+        cadena1[i] = cadena2[x];
+        for(i = 5; i > 0; i--){
+            while(x <= 5){
+                cadena2.push(cadena1);
+                x++;
+            }   
+        }
+        
+        document.write(cadena2);
+
+    </script>
+</body>
+</html>
