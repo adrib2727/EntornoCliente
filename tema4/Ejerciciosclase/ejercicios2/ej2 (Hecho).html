@@ -20,9 +20,9 @@
             cadena1.push(entrada); 
         }
 
-        let x = 0;
-        for(let i = cadena1.length-1; i >= 0; i--){ //
-            cadena2[x] = cadena1[i];
+        let x = 0; //Indice de la nueva cadena
+        for(let i = cadena1.length-1; i >= 0; i--){ //Comenzamos desde la última pos del la cadena1.
+            cadena2[x] = cadena1[i]; //Le decimos que la primera pos de cad1 va a ser la primera de cad2.
             x++;
         }
         
