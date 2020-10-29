@@ -12,18 +12,35 @@
         nota más alta que ha sacado y la menor.*/
          
         const cadena1 = [];
-        const reductor = (acumulador, valor_actual) => acumulador+valor_actual;
         let entrada;
 
         for(let entr = 0; entr < 5; entr++){
-            entrada = prompt("Introduce las notas (Del 1 al 10");
+            entrada = prompt("Introduce las notas (Del 1 al 10)");
             cadena1.push(entrada);
         }
-        document.write(cadena1);
+        //document.write(cadena1);
+       
+
+        document.writeln("Las notas del alumno son: ");
+        for(let e of cadena1){
+            document.writeln(e); //Mostrador de notas.
+        }
+
+        document.write("<br>");
+        let suma = 0;
+        let div = 0;
+        for(let cont = 0; cont < cadena1.length; cont++){
+            suma  = suma + cadena1[cont];
+        }
+        document.write("La suma de las notas es: "+suma);
+
+
+        document.writeln();
         document.write("<br>");
 
-     
-        console.log(cadena1.reduce(reductor));
+        
+
+        
        
 
         /*for(let e of cadena1){
