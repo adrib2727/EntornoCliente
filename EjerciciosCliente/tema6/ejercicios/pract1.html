@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Definición de la clase.
+        function Distancias(ejex, ejey){
+            this.ejex = ejex;
+            this.ejey = ejey;
+            this.mostrar=()=> `El eje x vale ${this.ejex} y el eje y vale ${this.ejey} \n`;
+        }
+
+        var pr_ejex = prompt("Introduce el valor de X");
+        var pr_ejey = prompt("Introduce el valor de y");
+
+        if((isNaN(pr_ejex) || pr_ejex == "")&&(isNaN(pr_ejey) || pr_ejey == "")){
+            let asig1 = new Distancias(0,0);
+            console.log(asig1.mostrar());
+        }
+
+        Distancias.prototype.Mover() = function(ejex, ejey){
+            return 
+        }
+    </script>
+</body>
+</html>
