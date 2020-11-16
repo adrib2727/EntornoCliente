@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Punto(x,y){
+            this.x = isNaN(x) ? "0" : x; //Similar al if
+            this.y = isNaN(y) ? "0" : y;
+
+            //Punto 2
+            this.mover = function(x,y){
+                this.x = isNaN(x) ? "0" : x;
+                this.y = isNaN(y) ? this.y : y;
+            }
+            //Punto 3
+            this.copia=()=> new Punto(this.x, this.y);
+
+            //Punto 4
+            this.iguales=function(p){
+                return ((this.x == p.x) && (this.y == p.y)) ? true : false;
+            }
+
+            //Punto 5
+            /*this.distancia = function(p){
+                Math.pow((this.x - p.x),2)+ Math.pow((this.x - p.x),2));
+            }*/
+        }
+
+        var p1 = new Punto();
+        p1.mover(77, "Pepe"); //Punto 2
+        console.log(p1);
+
+        //Punto 3
+        var p2 = p1.copia();
+        console.log(p2);
+
+        var p3 = p1.iguales();
+        console.log(p3);
+    </script>
+</body>
+</html>
