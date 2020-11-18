@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Crear un tipo de objeto que sirva para representar cartas.
+        Propiedades: 
+        Palo. Bastos, copas, oros y espadaas
+        Valor: Unnúmero del 1 al 12  donde el 1 es el A, el 10 es la sota, 11 el caballo y 12 el rey.
+
+        Métodos: 
+        Dar valor: Pasar el palo y el valor. Si no pasa nada, aleatorio. Comprobar si los datos son 
+        correctos.
+        ToString: Imprimirá el palo y su valor numérico o el texto en su caso.*/
+        
+
+        function Cartas(palo, valor){
+            const paloS=["OROS","ESPADAS","BASTOS","COPAS"];
+            const valoreS=["as",2,3,4,5,6,7,8,9,"sota", "caballo", "rey"];
+
+            //Método que da valores a las cartas que hemos metido (this son los elementos que se referencian en el comprobador).
+            this.darValor = function(){ 
+                this.valor = (valoreS.includes(valor)) ? valor : valoreS[0];
+                this.palo=(paloS.includes(palo.toUpperCase())) ? palo.toUpperCase() : paloS[0];
+            }
+
+            //Método toString.
+            this.toString = function(){
+                this.mostrarInfo = () => `El palo es ${this.palo} y el valor es: ${this.valor}.\n`;
+            }
+        }
+
+        //Clase que hereda de Cartas.
+        function Mazo(){
+            this.__proto__ = new Cartas();
+        }
+
+        var obj_mazo1 = new Mazo("oros",2);
+        console.log(obj_mazo1);
+        
+        
+    </script>
+</body>
+</html>
