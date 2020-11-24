@@ -6,17 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <section id="s1">
-        <h1>Título</h1>
-        <p>Ejemplo del cocumento <strong>DOM</strong> Visto como arbol</p>
-    </section>
-    <section id="s2">
-        <p>Aquí digo Hola</p>
-    </section>
+    <principal id="primero">
+        <p>Uno</p>
+        <p>Dos</p>
+        <p>Tres</p>
+    </principal>
+
     <script>
-        let seccion = document.getElementById("s1"); //No es necesario poner la # del ID.
-        //Ver de que tipo es el Strong.
-        console.log(seccion); //Saca el HTML(Nodo) y su información.
+        let seccion = document.getElementById("Primero");
+        console.log(seccion);
+        let losP = seccion.getElementsByTagName("p");
+        let todosLosP = document.getElementsByTagName("p");
+        console.log(losP);
+
+        for(let p of losP){
+            console.log(p.textContent);
+        }
     </script>
 </body>
 </html>

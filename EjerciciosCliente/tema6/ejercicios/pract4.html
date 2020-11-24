@@ -20,12 +20,23 @@
 
         function Cartas(palo, valor){
             const paloS=["OROS","ESPADAS","BASTOS","COPAS"];
-            const valoreS=["as",2,3,4,5,6,7,8,9,"sota", "caballo", "rey"];
+            const valoreS=["as",2,3,4,5,6,7,8,9,"jota", "reina", "rey"];
+
+            this.palo = paloS.includes(palo) ? palo : paloS[0];
+            this.valor = valoreS.includes(valor) ? valor : valoreS[0];
+
+            this.MisPalos = function(){
+                return paloS;
+            }
+
+            this.MisValores = function(){
+                return valoreS;
+            }
 
             //Método que da valores a las cartas que hemos metido (this son los elementos que se referencian en el comprobador).
-            this.darValor = function(){ 
-                this.valor = (valoreS.includes(valor)) ? valor : valoreS[0];
-                this.palo=(paloS.includes(palo.toUpperCase())) ? palo.toUpperCase() : paloS[0];
+            this.darValor = function(palo, valor){ 
+                this.palo = paloS.includes(palo) ? palo : paloS[0];
+                this.valor = valoreS.includes(valor) ? valor : valores[0];
             }
 
             //Método toString.
@@ -34,15 +45,64 @@
             }
         }
 
-        //Clase que hereda de Cartas.
-        function Mazo(){
-            this.__proto__ = new Cartas();
+        function Mazos(){
+            //Para que cada mazo tenga su array. Para eso se usa el this.
+            this.Mazo = []; //Array 
+
+            //Método para buscar una carta
+            this.buscarCartas = function(carta){
+                for(c of this.Mazo){
+                    if((carta.palo == c.palo) && (carta.valor == c.valor)){
+                        return true
+                    }
+                }
+                return false;
+            }
+
+            //Mete datos en el array principal
+            this.llenarArray = function(carta){
+                if(!this.buscarCartas(carta)){ //Si están las cartas que has buscado en el metodo de antes.
+                    this.Mazo.push(carta); //añade una carta que se crea mas abajo
+                }
+            }
+            //Método para llenar el array con todas las cartas. Se usarán funciones para meterlas todas.
+            this.llenarTodas = function(carta){
+                var c = new Cartas();
+                for(let p of c.MisPalos()){
+                    for(let v of c.MisValores()){
+                        this.llenarArray(new Cartas(p,v));
+                    }
+                }
+            }
+
+            //Desordenar mazo
+            this.mezclar = function(){
+                var primero;
+                var segundo;
+
+
+            }
+
+            //Ordenar mazo
+            this.ordenar = function(){
+                this.Mazo.sort((a,b) => {
+
+                });
+            }
         }
 
-        var obj_mazo1 = new Mazo("oros",2);
-        console.log(obj_mazo1);
-        
-        
+        //Llama al objeto de la primera clase
+        var c1 = new Cartas("espadas", 4);
+
+        c1.darValor("copas", "jota");
+
+        var m1 = new Mazos(); //Metes la carta en el mazo, lo lleva hasta .
+        m1.llenarArray(c1); //Llama al método, que lo que hace es llenarlo el array.
+        console.log(m1);
+
+
+        m1.llenarTodas();
+        console.log(m1)
     </script>
 </body>
 </html>
