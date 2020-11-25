@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+</head>
+<body>
+    <!--
+        1. Crear array con las palabras que se van a haber.
+        2. Sacar una palabra aleatoria a través de un bucle.
+        3. Crear un bucle que me vaya convirtiendo las palabras por subrayados y me la muestre.
+    -->
+    <script>
+        var Palabras = ["ordenador", "silla", "pizarra", "proyector", "mesa", "puerta"];
+        var PalEscogida = []; //Array donde meteremos la nueva palabra.
+        var pal;
+
+        for(let ind of Palabras){ //Recorre todo el array.
+            pal = Math.floor(Math.random() * Palabras.length);
+        }
+
+        document.write(pal.replace(pal, ",_,"));
+        //-------------------------------------------------------------------
+        
+
+    </script>
+</body>
+</html>

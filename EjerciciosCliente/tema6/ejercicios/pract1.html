@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Objetos tipo punto</title>
 </head>
 <body>
     <script>
+        
+
         //Definición de la clase.
         function Distancias(ejex, ejey){
             this.ejex = ejex;
@@ -14,17 +16,21 @@
             this.mostrar=()=> `El eje x vale ${this.ejex} y el eje y vale ${this.ejey} \n`;
         }
 
-        var pr_ejex = prompt("Introduce el valor de X");
-        var pr_ejey = prompt("Introduce el valor de y");
-
-        if((isNaN(pr_ejex) || pr_ejex == "")&&(isNaN(pr_ejey) || pr_ejey == "")){
-            let asig1 = new Distancias(0,0);
-            console.log(asig1.mostrar());
+        Distancias.prototype.EsNumero = function(){
+            let a;
+            if((isNaN(this.ejex && this.ejex == "")||(isNaN(this.ejey) && this.ejey == ""))){
+                a = new Distancias(0,0);
+            }
+            return a;
         }
 
-        Distancias.prototype.Mover() = function(ejex, ejey){
-            return 
+        Distancias.prototype.Mover = function(x, y){
+            let intrx = prompt("Introduce las nuevas coordenadas de x");
+            let intry = propmt("Introduce las nuevas coordenadas de y");
+
+            
         }
+        
     </script>
 </body>
 </html>
