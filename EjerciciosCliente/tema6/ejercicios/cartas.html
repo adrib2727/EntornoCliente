@@ -22,8 +22,8 @@
             const paloS=["OROS","ESPADAS","BASTOS","COPAS"];
             const valoreS=["as",2,3,4,5,6,7,8,9,"jota", "reina", "rey"];
 
-            this.palo = paloS.includes(palo) ? palo : paloS[0];
-            this.valor = valoreS.includes(valor) ? valor : valoreS[0];
+            this.palo = paloS.includes(palo) ? palo : paloS[0]; //Si existe el palo, coge ese mismo. Sino, el primero que haya.
+            this.valor = valoreS.includes(valor) ? valor : valoreS[0]; //Igual pero con los valores.
 
             this.MisPalos = function(){
                 return paloS;
@@ -47,11 +47,11 @@
 
         function Mazos(){
             //Para que cada mazo tenga su array. Para eso se usa el this.
-            this.Mazo = []; //Array 
+            this.Mazo = []; //Array donde se van metiendo 
 
             //Método para buscar una carta
             this.buscarCartas = function(carta){
-                for(c of this.Mazo){
+                for(let c of this.Mazo){
                     if((carta.palo == c.palo) && (carta.valor == c.valor)){
                         return true
                     }
@@ -75,34 +75,54 @@
                 }
             }
 
+            this.SacarUnaCarta = function(carta){
+
+            }
+
             //Desordenar mazo
             this.mezclar = function(){
                 var primero;
                 var segundo;
 
+                /*Crea una posición aleatoria del array y va cambiándolo de sitio*/
+                for(let i=0;i<100;i++){
+                    primero = Math.round(Math.random()*this.Mazo.length);
+                    segundo = Math.round(Math.random()*this.Mazo.length);
+                    [this.Mazo[primero], this.Mazo[segundo] = this.Mazo[segundo], this.Mazo[primero]];
+                }
 
             }
 
             //Ordenar mazo
             this.ordenar = function(){
                 this.Mazo.sort((a,b) => {
-
+                    a.palo - a.valor;
+                    b.palo - b.valor;
                 });
             }
         }
 
         //Llama al objeto de la primera clase
-        var c1 = new Cartas("espadas", 4);
+        var c1 = new Cartas("OROS", 4);
+        console.log(c1);
 
-        c1.darValor("copas", "jota");
+        //c1.darValor("copas", "jota");
 
-        var m1 = new Mazos(); //Metes la carta en el mazo, lo lleva hasta .
+        /* var m1 = new Mazos(); //Metes la carta en el mazo, lo lleva hasta .
         m1.llenarArray(c1); //Llama al método, que lo que hace es llenarlo el array.
         console.log(m1);
 
 
         m1.llenarTodas();
-        console.log(m1)
+        console.log(m1);
+
+        m1.ordenar(this.Mazo);
+        console.log(m1);
+
+        m1.mezclar(this.Mazo);
+        console.log(m1); */
+
+
     </script>
 </body>
 </html>
