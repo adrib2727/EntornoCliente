@@ -13,7 +13,7 @@
         <p id="parrafo3">Lorem ipsum dolor, sitamet consectetur adipisicing elit. Natus, magni!</p>
     </section>
     <script>
-        /* let seccion = document.getElementById("s1");
+        let seccion = document.getElementById("s1");
 
         for(let hijo of seccion.childNodes){
             document.write(`Texto: ${hijo.nodeValue}, tipo de nodo: ${hijo.nodeType}, nombre: ${hijo.nodeName}<br>`);
@@ -24,16 +24,16 @@
         for(let hijo of seccion.children){
             document.write(`Texto: ${hijo.nodeValue}, tipo de nodo: ${hijo.nodeType}, nombre: ${hijo.nodeName}<br>`);
             document.write(`<br> Un contenido ${hijo.innerHTML}`);
-        } */
+        }
 
 
 
-        /* let s = document.getElementById("s2");
+        let s = document.getElementById("s2");
         document.write(s.innerHTML," ", s.parentNode.innerHTML);
 
-        s.parentNode.parentNode.firstElementChild.nextElementSibling; */
+        s.parentNode.parentNode.firstElementChild.nextElementSibling; 
 
-        /* let nuevoP = document.createElement("p");
+        let nuevoP = document.createElement("p");
         nuevoP.innerHTML = "Ricardo";
         nuevoP.setAttribute("id", "parrafo4");
 
@@ -43,7 +43,7 @@
         seccion.insertBefore(nuevoP, document.getElementById("parrafo2"));
 
         seccion.replaceChild(nuevoP, document.getElementById("parrafo2"));
-        seccion.removeChild(document.getElementsByTagName("p")[2]); */
+        seccion.removeChild(document.getElementsByTagName("p")[2]); 
 
         var id_reloj = setTimeout(()=>alert("Termina pronto"), 2000);
         clearTimeout(id_reloj);
